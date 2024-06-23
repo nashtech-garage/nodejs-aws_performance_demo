@@ -2,7 +2,9 @@ import { Controller, Get, Post, Body, Patch, Param, Delete } from '@nestjs/commo
 import { PaymentOverviewService } from './payment-overview.service';
 import { CreatePaymentOverviewDto } from './dto/create-payment-overview.dto';
 import { UpdatePaymentOverviewDto } from './dto/update-payment-overview.dto';
+import { ApiTags } from '@nestjs/swagger';
 
+@ApiTags('Payment Overview')
 @Controller('payment-overview')
 export class PaymentOverviewController {
   constructor(private readonly paymentOverviewService: PaymentOverviewService) {}

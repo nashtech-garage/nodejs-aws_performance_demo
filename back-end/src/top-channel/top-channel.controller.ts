@@ -2,7 +2,9 @@ import { Controller, Get, Post, Body, Patch, Param, Delete } from '@nestjs/commo
 import { TopChannelService } from './top-channel.service';
 import { CreateTopChannelDto } from './dto/create-top-channel.dto';
 import { UpdateTopChannelDto } from './dto/update-top-channel.dto';
+import { ApiTags } from '@nestjs/swagger';
 
+@ApiTags('Top Channel')
 @Controller('top-channel')
 export class TopChannelController {
   constructor(private readonly topChannelService: TopChannelService) {}

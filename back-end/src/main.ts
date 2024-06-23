@@ -8,6 +8,12 @@ async function bootstrap() {
     AppModule,
     new FastifyAdapter()
   );
+  app.enableCors({
+    origin: [
+      'http://localhost:3000',
+      'http://localhost:8080'
+    ]
+  });
 
   const config = new DocumentBuilder()
   .setTitle('Demo Backend')

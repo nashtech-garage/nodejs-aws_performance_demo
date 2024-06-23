@@ -2,7 +2,9 @@ import { Controller, Get, Post, Body, Patch, Param, Delete } from '@nestjs/commo
 import { UsedDeviceService } from './used-device.service';
 import { CreateUsedDeviceDto } from './dto/create-used-device.dto';
 import { UpdateUsedDeviceDto } from './dto/update-used-device.dto';
+import { ApiTags } from '@nestjs/swagger';
 
+@ApiTags('Used Device')
 @Controller('used-device')
 export class UsedDeviceController {
   constructor(private readonly usedDeviceService: UsedDeviceService) {}

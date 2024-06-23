@@ -1,9 +1,5 @@
 import { ApiProperty } from '@nestjs/swagger';
-
-enum pyament_type {
-    Receive=0,
-    Due=1
-}
+import { payment_type  } from '../enum/payment.enum';
 
 export class CreatePaymentOverviewDto {
     @ApiProperty()
@@ -15,6 +11,6 @@ export class CreatePaymentOverviewDto {
     @ApiProperty()
     value: number;
 
-    @ApiProperty()
-    payment_type: pyament_type;
+    @ApiProperty({enum: payment_type})
+    payment_type: payment_type;
 }
