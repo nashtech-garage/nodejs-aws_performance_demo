@@ -1,0 +1,197 @@
+{
+  "version": "34.0.0",
+  "artifacts": {
+    "EC2WebApp.assets": {
+      "type": "cdk:asset-manifest",
+      "properties": {
+        "file": "EC2WebApp.assets.json",
+        "requiresBootstrapStackVersion": 6,
+        "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version"
+      }
+    },
+    "EC2WebApp": {
+      "type": "aws:cloudformation:stack",
+      "environment": "aws://716114214401/us-east-1",
+      "properties": {
+        "templateFile": "EC2WebApp.template.json",
+        "terminationProtection": false,
+        "validateOnSynth": false,
+        "assumeRoleArn": "arn:${AWS::Partition}:iam::716114214401:role/cdk-hnb659fds-deploy-role-716114214401-us-east-1",
+        "cloudFormationExecutionRoleArn": "arn:${AWS::Partition}:iam::716114214401:role/cdk-hnb659fds-cfn-exec-role-716114214401-us-east-1",
+        "stackTemplateAssetObjectUrl": "s3://cdk-hnb659fds-assets-716114214401-us-east-1/572368e3e4c44593c88acc5fc490d6aa1b70e7bf8cfb6ca82e91577793710fea.json",
+        "requiresBootstrapStackVersion": 6,
+        "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version",
+        "additionalDependencies": [
+          "EC2WebApp.assets"
+        ],
+        "lookupRole": {
+          "arn": "arn:${AWS::Partition}:iam::716114214401:role/cdk-hnb659fds-lookup-role-716114214401-us-east-1",
+          "requiresBootstrapStackVersion": 8,
+          "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version"
+        }
+      },
+      "dependencies": [
+        "EC2WebApp.assets"
+      ],
+      "metadata": {
+        "/EC2WebApp/VPC/VPC/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "VPC61AD6880"
+          }
+        ],
+        "/EC2WebApp/VPC/VPC/ServerPublicSubnet1/Subnet": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "VPCServerPublicSubnet1SubnetF3987995"
+          }
+        ],
+        "/EC2WebApp/VPC/VPC/ServerPublicSubnet1/RouteTable": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "VPCServerPublicSubnet1RouteTable140320E2"
+          }
+        ],
+        "/EC2WebApp/VPC/VPC/ServerPublicSubnet1/RouteTableAssociation": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "VPCServerPublicSubnet1RouteTableAssociationBCA9EE21"
+          }
+        ],
+        "/EC2WebApp/VPC/VPC/ServerPublicSubnet1/DefaultRoute": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "VPCServerPublicSubnet1DefaultRoute0DEC8857"
+          }
+        ],
+        "/EC2WebApp/VPC/VPC/ServerPublicSubnet2/Subnet": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "VPCServerPublicSubnet2SubnetDB508B90"
+          }
+        ],
+        "/EC2WebApp/VPC/VPC/ServerPublicSubnet2/RouteTable": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "VPCServerPublicSubnet2RouteTableD6971BF3"
+          }
+        ],
+        "/EC2WebApp/VPC/VPC/ServerPublicSubnet2/RouteTableAssociation": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "VPCServerPublicSubnet2RouteTableAssociationE261CDCA"
+          }
+        ],
+        "/EC2WebApp/VPC/VPC/ServerPublicSubnet2/DefaultRoute": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "VPCServerPublicSubnet2DefaultRoute6A434666"
+          }
+        ],
+        "/EC2WebApp/VPC/VPC/IGW": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "VPCIGWE1DD60CF"
+          }
+        ],
+        "/EC2WebApp/VPC/VPC/VPCGW": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "VPCVPCGW3AFA48F6"
+          }
+        ],
+        "/EC2WebApp/VPC/VPC/RestrictDefaultSecurityGroupCustomResource/Default": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "VPCRestrictDefaultSecurityGroupCustomResourceDF1EE3A6"
+          }
+        ],
+        "/EC2WebApp/VPC/SSHSecurityGroup/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "VPCSSHSecurityGroup0495A24F"
+          }
+        ],
+        "/EC2WebApp/Custom::VpcRestrictDefaultSGCustomResourceProvider/Role": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CustomVpcRestrictDefaultSGCustomResourceProviderRole26592FE0"
+          }
+        ],
+        "/EC2WebApp/Custom::VpcRestrictDefaultSGCustomResourceProvider/Handler": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CustomVpcRestrictDefaultSGCustomResourceProviderHandlerDC833E5E"
+          }
+        ],
+        "/EC2WebApp/EC2/serverEc2Role/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "EC2serverEc2Role6775A3D4"
+          }
+        ],
+        "/EC2WebApp/EC2/ec2InstanceSecurityGroup/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "EC2ec2InstanceSecurityGroupD268D496"
+          }
+        ],
+        "/EC2WebApp/EC2/webappServer/InstanceProfile": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "EC2webappServerInstanceProfileA955497B"
+          }
+        ],
+        "/EC2WebApp/EC2/webappServer/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "EC2webappServer3EB4F81A"
+          }
+        ],
+        "/EC2WebApp/SsmParameterValue:--aws--service--ami-amazon-linux-latest--al2023-ami-kernel-6.1-arm64:C96584B6-F00A-464E-AD19-53AFF4B05118.Parameter": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SsmParameterValueawsserviceamiamazonlinuxlatestal2023amikernel61arm64C96584B6F00A464EAD1953AFF4B05118Parameter"
+          }
+        ],
+        "/EC2WebApp/ssmCommand": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ssmCommand"
+          }
+        ],
+        "/EC2WebApp/sshCommand": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "sshCommand"
+          }
+        ],
+        "/EC2WebApp/CDKMetadata/Default": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CDKMetadata"
+          }
+        ],
+        "/EC2WebApp/BootstrapVersion": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "BootstrapVersion"
+          }
+        ],
+        "/EC2WebApp/CheckBootstrapVersion": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CheckBootstrapVersion"
+          }
+        ]
+      },
+      "displayName": "EC2WebApp"
+    },
+    "Tree": {
+      "type": "cdk:tree",
+      "properties": {
+        "file": "tree.json"
+      }
+    }
+  }
+}
