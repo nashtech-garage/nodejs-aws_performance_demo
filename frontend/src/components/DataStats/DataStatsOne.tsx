@@ -133,7 +133,7 @@ const DataStatsOne: React.FC<dataStats> = () => {
   const [isLoading, setLoading] = useState(true)
  
   useEffect(() => {
-    fetch('http://localhost:3000/summary')
+    fetch(`${process.env.api_url}/summary`)
       .then((res) => res.json())
       .then((data) => {
         setData(data)

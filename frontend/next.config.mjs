@@ -1,5 +1,8 @@
 /** @type {import("next").NextConfig} */
 const nextConfig = {
+  env: {
+    api_url: "http://localhost:3000",
+  },
   images: {
     domains: ["localhost"],
     remotePatterns: [
