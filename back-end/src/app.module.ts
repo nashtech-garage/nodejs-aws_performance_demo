@@ -15,7 +15,7 @@ import { ConfigModule } from '@nestjs/config';
 import configuration from './config/configuration';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { DataSource } from 'typeorm';
-import { Summary } from './summary/entities/summary.entity';
+// import { Summary } from './summary/entities/summary.entity';
 
 @Module({
   controllers: [AppController],
@@ -37,7 +37,7 @@ import { Summary } from './summary/entities/summary.entity';
       // entities: [Summary],
       synchronize: configuration().database.synchronize,
       autoLoadEntities: true, // That will auto load entity when module call TypeOrmModule.forFeature
-    }),
+    })
   ],
 })
 export class AppModule {

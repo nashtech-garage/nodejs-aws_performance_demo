@@ -2,11 +2,15 @@ import { NestFactory } from '@nestjs/core';
 import { FastifyAdapter, NestFastifyApplication } from '@nestjs/platform-fastify';
 import { SwaggerModule, DocumentBuilder } from '@nestjs/swagger';
 import { AppModule } from './app.module';
+// import instrumentation from './instrumentation';
+import BackendInstrument from './backend.instrument';
 
 async function bootstrap() {
   const app = await NestFactory.create<NestFastifyApplication>(
     AppModule,
-    new FastifyAdapter()
+    new FastifyAdapter(), {
+      snapshot: true,  
+    }
   );
   app.enableCors({
     origin: [
@@ -23,6 +27,9 @@ async function bootstrap() {
 
   const document = SwaggerModule.createDocument(app, config);
   SwaggerModule.setup('api', app, document);
+
+  // await instrumentation();
+  await BackendInstrument();
 
   await app.listen(3000, '0.0.0.0');
 }
