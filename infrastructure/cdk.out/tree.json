@@ -591,9 +591,9 @@
                           "Ref": "EC2webappServerInstanceProfileA955497B"
                         },
                         "imageId": {
-                          "Ref": "SsmParameterValueawsserviceamiamazonlinuxlatestal2023amikernel61arm64C96584B6F00A464EAD1953AFF4B05118Parameter"
+                          "Ref": "SsmParameterValueawsserviceamiamazonlinuxlatestal2023amikernel61x8664C96584B6F00A464EAD1953AFF4B05118Parameter"
                         },
-                        "instanceType": "m7g.large",
+                        "instanceType": "t2.medium",
                         "keyName": "vuilendi-fund-ec2",
                         "securityGroupIds": [
                           {
@@ -619,7 +619,7 @@
                           }
                         ],
                         "userData": {
-                          "Fn::Base64": "#!/bin/bash\nyum update -y\ncurl -sL https://dl.yarnpkg.com/rpm/yarn.repo | sudo tee /etc/yum.repos.d/yarn.repo\ncurl -sL https://rpm.nodesource.com/setup_20.x | sudo -E bash - \nyum install -y amazon-cloudwatch-agent nodejs python3-pip zip unzip docker yarn\nsudo systemctl enable docker\nsudo systemctl start docker\nsudo dnf update\nsudo dnf install -y nginx\nsudo systemctl start nginx.service\nsudo systemctl status nginx.service\nsudo systemctl enable nginx.service"
+                          "Fn::Base64": "#!/bin/bash\nyum update -y\ncurl -sL https://dl.yarnpkg.com/rpm/yarn.repo | sudo tee /etc/yum.repos.d/yarn.repo\ncurl -sL https://rpm.nodesource.com/setup_20.x | sudo -E bash - \nyum install -y git\nyum install -y amazon-cloudwatch-agent nodejs python3-pip zip unzip docker yarn\nsudo systemctl enable docker\nsudo systemctl start docker\nsudo dnf update\nsudo dnf install -y nginx\nsudo systemctl start nginx.service\nsudo systemctl status nginx.service\nsudo systemctl enable nginx.service"
                         }
                       }
                     },
@@ -640,17 +640,17 @@
               "version": "10.3.0"
             }
           },
-          "SsmParameterValue:--aws--service--ami-amazon-linux-latest--al2023-ami-kernel-6.1-arm64:C96584B6-F00A-464E-AD19-53AFF4B05118.Parameter": {
-            "id": "SsmParameterValue:--aws--service--ami-amazon-linux-latest--al2023-ami-kernel-6.1-arm64:C96584B6-F00A-464E-AD19-53AFF4B05118.Parameter",
-            "path": "EC2WebApp/SsmParameterValue:--aws--service--ami-amazon-linux-latest--al2023-ami-kernel-6.1-arm64:C96584B6-F00A-464E-AD19-53AFF4B05118.Parameter",
+          "SsmParameterValue:--aws--service--ami-amazon-linux-latest--al2023-ami-kernel-6.1-x86_64:C96584B6-F00A-464E-AD19-53AFF4B05118.Parameter": {
+            "id": "SsmParameterValue:--aws--service--ami-amazon-linux-latest--al2023-ami-kernel-6.1-x86_64:C96584B6-F00A-464E-AD19-53AFF4B05118.Parameter",
+            "path": "EC2WebApp/SsmParameterValue:--aws--service--ami-amazon-linux-latest--al2023-ami-kernel-6.1-x86_64:C96584B6-F00A-464E-AD19-53AFF4B05118.Parameter",
             "constructInfo": {
               "fqn": "aws-cdk-lib.CfnParameter",
               "version": "2.100.0"
             }
           },
-          "SsmParameterValue:--aws--service--ami-amazon-linux-latest--al2023-ami-kernel-6.1-arm64:C96584B6-F00A-464E-AD19-53AFF4B05118": {
-            "id": "SsmParameterValue:--aws--service--ami-amazon-linux-latest--al2023-ami-kernel-6.1-arm64:C96584B6-F00A-464E-AD19-53AFF4B05118",
-            "path": "EC2WebApp/SsmParameterValue:--aws--service--ami-amazon-linux-latest--al2023-ami-kernel-6.1-arm64:C96584B6-F00A-464E-AD19-53AFF4B05118",
+          "SsmParameterValue:--aws--service--ami-amazon-linux-latest--al2023-ami-kernel-6.1-x86_64:C96584B6-F00A-464E-AD19-53AFF4B05118": {
+            "id": "SsmParameterValue:--aws--service--ami-amazon-linux-latest--al2023-ami-kernel-6.1-x86_64:C96584B6-F00A-464E-AD19-53AFF4B05118",
+            "path": "EC2WebApp/SsmParameterValue:--aws--service--ami-amazon-linux-latest--al2023-ami-kernel-6.1-x86_64:C96584B6-F00A-464E-AD19-53AFF4B05118",
             "constructInfo": {
               "fqn": "aws-cdk-lib.Resource",
               "version": "2.100.0"

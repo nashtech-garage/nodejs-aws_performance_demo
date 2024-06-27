@@ -18,7 +18,7 @@
         "validateOnSynth": false,
         "assumeRoleArn": "arn:${AWS::Partition}:iam::716114214401:role/cdk-hnb659fds-deploy-role-716114214401-us-east-1",
         "cloudFormationExecutionRoleArn": "arn:${AWS::Partition}:iam::716114214401:role/cdk-hnb659fds-cfn-exec-role-716114214401-us-east-1",
-        "stackTemplateAssetObjectUrl": "s3://cdk-hnb659fds-assets-716114214401-us-east-1/572368e3e4c44593c88acc5fc490d6aa1b70e7bf8cfb6ca82e91577793710fea.json",
+        "stackTemplateAssetObjectUrl": "s3://cdk-hnb659fds-assets-716114214401-us-east-1/63491fefc794b54b030433de96700cf59f4becfdf7009d95b5988887eb3d119c.json",
         "requiresBootstrapStackVersion": 6,
         "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version",
         "additionalDependencies": [
@@ -148,10 +148,10 @@
             "data": "EC2webappServer3EB4F81A"
           }
         ],
-        "/EC2WebApp/SsmParameterValue:--aws--service--ami-amazon-linux-latest--al2023-ami-kernel-6.1-arm64:C96584B6-F00A-464E-AD19-53AFF4B05118.Parameter": [
+        "/EC2WebApp/SsmParameterValue:--aws--service--ami-amazon-linux-latest--al2023-ami-kernel-6.1-x86_64:C96584B6-F00A-464E-AD19-53AFF4B05118.Parameter": [
           {
             "type": "aws:cdk:logicalId",
-            "data": "SsmParameterValueawsserviceamiamazonlinuxlatestal2023amikernel61arm64C96584B6F00A464EAD1953AFF4B05118Parameter"
+            "data": "SsmParameterValueawsserviceamiamazonlinuxlatestal2023amikernel61x8664C96584B6F00A464EAD1953AFF4B05118Parameter"
           }
         ],
         "/EC2WebApp/ssmCommand": [

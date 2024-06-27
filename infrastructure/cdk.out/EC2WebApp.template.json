@@ -468,9 +468,9 @@
      "Ref": "EC2webappServerInstanceProfileA955497B"
     },
     "ImageId": {
-     "Ref": "SsmParameterValueawsserviceamiamazonlinuxlatestal2023amikernel61arm64C96584B6F00A464EAD1953AFF4B05118Parameter"
+     "Ref": "SsmParameterValueawsserviceamiamazonlinuxlatestal2023amikernel61x8664C96584B6F00A464EAD1953AFF4B05118Parameter"
     },
-    "InstanceType": "m7g.large",
+    "InstanceType": "t2.medium",
     "KeyName": "vuilendi-fund-ec2",
     "SecurityGroupIds": [
      {
@@ -496,7 +496,7 @@
      }
     ],
     "UserData": {
-     "Fn::Base64": "#!/bin/bash\nyum update -y\ncurl -sL https://dl.yarnpkg.com/rpm/yarn.repo | sudo tee /etc/yum.repos.d/yarn.repo\ncurl -sL https://rpm.nodesource.com/setup_20.x | sudo -E bash - \nyum install -y amazon-cloudwatch-agent nodejs python3-pip zip unzip docker yarn\nsudo systemctl enable docker\nsudo systemctl start docker\nsudo dnf update\nsudo dnf install -y nginx\nsudo systemctl start nginx.service\nsudo systemctl status nginx.service\nsudo systemctl enable nginx.service"
+     "Fn::Base64": "#!/bin/bash\nyum update -y\ncurl -sL https://dl.yarnpkg.com/rpm/yarn.repo | sudo tee /etc/yum.repos.d/yarn.repo\ncurl -sL https://rpm.nodesource.com/setup_20.x | sudo -E bash - \nyum install -y git\nyum install -y amazon-cloudwatch-agent nodejs python3-pip zip unzip docker yarn\nsudo systemctl enable docker\nsudo systemctl start docker\nsudo dnf update\nsudo dnf install -y nginx\nsudo systemctl start nginx.service\nsudo systemctl status nginx.service\nsudo systemctl enable nginx.service"
     }
    },
    "DependsOn": [
@@ -517,9 +517,9 @@
   }
  },
  "Parameters": {
-  "SsmParameterValueawsserviceamiamazonlinuxlatestal2023amikernel61arm64C96584B6F00A464EAD1953AFF4B05118Parameter": {
+  "SsmParameterValueawsserviceamiamazonlinuxlatestal2023amikernel61x8664C96584B6F00A464EAD1953AFF4B05118Parameter": {
    "Type": "AWS::SSM::Parameter::Value<AWS::EC2::Image::Id>",
-   "Default": "/aws/service/ami-amazon-linux-latest/al2023-ami-kernel-6.1-arm64"
+   "Default": "/aws/service/ami-amazon-linux-latest/al2023-ami-kernel-6.1-x86_64"
   },
   "BootstrapVersion": {
    "Type": "AWS::SSM::Parameter::Value<String>",
